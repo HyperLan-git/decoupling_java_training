@@ -8,7 +8,7 @@ public class Launcher {
 		Player p = null;
 		long iter = 0;
 		Long val = null;
-		if(args.length < 0) {
+		if(args.length < 1) {
 			System.out.println("Use an argument : -interactive to play yourself ou -auto to let the computer play");
 			return;
 		}

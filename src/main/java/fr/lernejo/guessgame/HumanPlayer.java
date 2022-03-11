@@ -14,6 +14,7 @@ public class HumanPlayer implements Player {
 		long result = 0;
 		boolean valid = false;
 		while(!valid) {
+			System.out.println("Guess a number !");
 			try {
 				result = Long.valueOf(sc.next());
 				valid = true;
@@ -26,10 +27,11 @@ public class HumanPlayer implements Player {
 
 	@Override
 	public void respond(boolean lowerOrGreater) {
+		logger.log("response : " + lowerOrGreater);
 		if(lowerOrGreater)
-			logger.log("The right value is greater !");
+			System.out.println("The right value is greater !");
 		else
-			logger.log("The right value is lower !");
+			System.out.println("The right value is lower !");
 	}
 
 }
