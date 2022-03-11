@@ -1,5 +1,8 @@
 package fr.lernejo.guessgame;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import fr.lernejo.logger.Logger;
 import fr.lernejo.logger.LoggerFactory;
 
@@ -32,7 +35,12 @@ public class Simulation {
 		return false;
 	}
 
-	public void loopUntilPlayerSucceed() {
-		while(!nextRound());
+	public void loopUntilPlayerSucceed(long iter) {
+		Instant instant = Instant.now();
+		while(!nextRound() && iter-- > 0) {
+			Duration d = Duration.between(instant, Instant.now());
+			System.out.println(String.format("%02d:%02d.%03d",
+					d.toMinutesPart(), d.toSecondsPart(), d.toMillisPart()));
+		}
 	}
 }
