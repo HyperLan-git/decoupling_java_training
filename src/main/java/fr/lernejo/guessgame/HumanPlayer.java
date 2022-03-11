@@ -19,6 +19,7 @@ public class HumanPlayer implements Player {
 				result = Long.valueOf(sc.next());
 				valid = true;
 			} catch (NumberFormatException e) {
+				logger.log("Not a number !");
 				valid = false;
 			}
 		}
